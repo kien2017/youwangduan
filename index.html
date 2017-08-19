@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script type="text/javascript" src="instascan.min.js"></script>
+
+  <script type="text/javascript">
+    window.$ = window.jQuery = require('./jquery-3.2.1.min.js')
+  </script>
+
+  <script src="bootstrap.min.js"></script>
+  <title>geli qianbao you wang duan</title>
+</head>
+
+<body>
+  
+
+
+<select id="selectnet" class="btn btn-success btn-lg">
+  <option value="livenet">Livenet</option>
+  <option value="testnet">Testnet</option>
+</select>
+
+ 
+  
+  <div id="total" class="btn btn-success btn-lg">total</div>
+  <button id="refresh" class="btn btn-success btn-lg">refresh</button>
+
+  
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" >sendtoaddress</span>
+  <input type="text" class="form-control"   aria-describedby="sizing-addon1" id="sendtoaddress">
+</div>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" >sendamount</span>
+  <input type="text" class="form-control" aria-describedby="sizing-addon1" id="sendamount">
+</div>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" >fee</span>
+  <input type="text" class="form-control" placeholder="0.001" aria-describedby="sizing-addon1" id="sendfee">
+
+      <span class="input-group-btn">
+        <button id="btngetunsigndata" class="btn btn-secondary btn-success btn-sm" type="button">get unsigndata</button>
+      </span>
+
+</div>
+
+
+<!--   <div>sendtoaddress</div> <input type="text" id="sendtoaddress" value="" class="form-control">
+  <div>sendamount</div> <input type="text" id="sendamount" value="">
+  <div>fee</div> <input type="text" id="sendfee" value=""> -->
+  
+ <!--  <button id="btngetunsigndata" class="btn btn-success btn-sm">get unsigndata</button> -->
+  <button id="opencameraandscan" class="btn btn-success btn-lg">open camera and scan</button>
+   <button id="closecamera" class="btn btn-success btn-lg">close camera</button>
+  <button id="listaddress" class="btn btn-success btn-lg">listaddress</button>
+  <button id="sendbitcoin" class="btn btn-danger btn-lg"> send bitcoin</button>
+<button id="signmessage" class="btn btn-danger btn-lg"> sign message</button>
+  <style type="text/css">
+ th{
+      text-align: center;
+ }
+  </style>
+
+ 
+
+
+<div id="signdiv" style="display:none">
+
+  <div class="form-group">
+  <label for="usr">address:</label>
+  <input type="text" class="form-control" id="address">
+</div>
+<div class="form-group">
+  <label for="usr">unsignmessage:</label>
+  <input type="text" class="form-control" id="unsignmessage">
+</div>
+<div>signedmessage:</div>
+<div id="signresult"></div>
+  <div id="sign" class="btn btn-success btn-lg">sign</div>
+
+
+
+</div>
+
+
+
+  <table class="btn-lg"></table>
+  <ul></ul>
+ <!--  <div id="displayunsigndata"></div>
+   -->
+  <canvas id="displayqrcode"></canvas>
+  <video id="preview"></video>
+  
+
+
+
+
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+
+</body>
+
+</html>
