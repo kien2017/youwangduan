@@ -91,7 +91,7 @@ if(decodeqrcode(content) == true){
 
       for(var i=0;i<qrcodestr.length;i++){
 
-        if(qrcodestr[i].length == 34){
+        if(qrcodestr[i].length == 34 || qrcodestr[i].length == 33){
 
 
          db.insert({address:qrcodestr[i]})
